@@ -1,0 +1,64 @@
+.boilerplate-pricing-tier-block{
+	width: 100%;
+	height: auto;
+	padding: 24px;
+	background-color: #fff;
+	border-radius: 12px;
+	@media only screen and (max-width: 767px){
+		padding-left: 24px !important;
+		padding-right: 24px !important;
+	}
+	&-inner{
+		.boilerplate-icon-card-block-inner__icon{
+			margin-right: 12px;
+			@media only screen and (max-width: 767px){
+				text-align: left;
+			}
+		}
+
+		.boilerplate-icon-card-block-inner__content .boilerplate-icon-card__heading, .boilerplate-icon-card-block-inner__content .boilerplate-icon-card__desc, .boilerplate-icon-card-block-inner__content p{
+			@media only screen and (max-width: 767px){
+				text-align: left;
+			}
+		}
+
+		.wp-block-separator.is-style-wide, .wp-block-separator.has-background:not(.is-style-dots){
+			border-bottom: 1px solid #000c;
+			opacity: 0.5;
+		}
+
+		.boilerplate-pricing-tier__heading{
+			margin: 0;
+			padding: 0;
+			@media only screen and (max-width: 767px){
+				font-size: 40px !important;
+			}
+			span{
+				font-size: 28px;
+				line-height: 120%;
+			}
+		}
+
+		.boilerplate-pricing-tier__desc, .boilerplate-pricing-tier__heading, .wp-block-separator{
+			margin: 0;
+			padding: 0;
+		}
+
+		.wp-block-buttons{
+			&.is-style-boilerplate-border{
+				> .wp-block-button{
+					width: 100%;
+					&:hover{
+						a{
+							text-decoration: none;
+						}
+					}	
+				}
+			}
+		}
+
+		.boilerplate-list-block.is-style-ticks ul li:not(:last-child){
+			margin-bottom: 32px;
+		}
+	}
+}

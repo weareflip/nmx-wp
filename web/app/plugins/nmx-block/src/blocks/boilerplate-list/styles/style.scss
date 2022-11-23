@@ -1,0 +1,125 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+.boilerplate-list-block {
+	&.is-style-ticks {
+		ul {
+			li {
+				padding-left: 32px;
+				&:not(:last-child) {
+					margin-bottom: var(--gap, 20px);
+				}
+				&::before {
+					content: "";
+					background-color: transparent;
+					position: absolute;
+					left: 0;
+					top: -2px;
+					background-size: 24px;
+					width: 24px;
+					height: 24px;
+					background-position: center;
+					background-repeat: no-repeat;
+					background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzE1MjBfNDY3NikiPgo8ZyBjbGlwLXBhdGg9InVybCgjY2xpcDFfMTUyMF80Njc2KSI+CjxwYXRoIGQ9Ik0xMiAyMS4wMDFDMTYuOTcwNiAyMS4wMDEgMjEgMTYuOTcxNSAyMSAxMi4wMDFDMjEgNy4wMzA0MSAxNi45NzA2IDMuMDAwOTggMTIgMy4wMDA5OEM3LjAyOTQ0IDMuMDAwOTggMyA3LjAzMDQxIDMgMTIuMDAxQzMgMTYuOTcxNSA3LjAyOTQ0IDIxLjAwMSAxMiAyMS4wMDFaIiBmaWxsPSIjM0M0OURDIi8+CjxwYXRoIGQ9Ik0xNi4xMjUgOS43NTA5OEwxMC42MjE5IDE1LjAwMUw3Ljg3NSAxMi4zNzYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9nPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzE1MjBfNDY3NiI+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0id2hpdGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC4wMDA5NzY1NjIpIi8+CjwvY2xpcFBhdGg+CjxjbGlwUGF0aCBpZD0iY2xpcDFfMTUyMF80Njc2Ij4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjAwMDk3NjU2MikiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K");
+				}
+			}
+		}
+	}
+
+	&.is-style-numbered {
+		ul {
+			counter-reset: my-awesome-counter;
+			list-style: none;
+			li {
+				counter-increment: my-awesome-counter;
+				position: relative;
+				padding-left: 32px;
+				&:not(:last-child) {
+					margin-bottom: var(--gap, 20px);
+				}
+				&::before {
+					background-size: 23px;
+					width: 24px;
+					height: 24px;
+					content: counter(my-awesome-counter);
+					position: absolute;
+					left: 0;
+					top: 0px;
+					background: $secondary;
+					border-radius: 50%;
+					font-weight: bold;
+					text-align: center;
+					color: #fff;
+					font-size: 12.5px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+		}
+	}
+
+	&.is-style-arrow{
+		ul{
+			li{
+				padding: 0;
+				width: fit-content;
+				font-style: normal;
+				font-weight: 700;
+				font-size: 22.5px;
+				line-height: 120%;
+				&::before{
+					width: 16px;
+					height: 16px;
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-image: url('../assets/images/icon-arrow-dark.png');
+					background-color: transparent;	
+					left: inherit;
+					right: -30px;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+				a{
+					color: inherit;
+					font-size: inherit;
+					line-height: inherit;
+					font-weight: inherit;
+				}
+			}
+		}
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+		li {
+			padding-left: 20px;
+			position: relative;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 140%;
+			color: var(--color);
+			&:not(:last-child) {
+				margin-bottom: var(--gap, 20px);
+			}
+			&::before {
+				content: "";
+				width: 6px;
+				height: 6px;
+				position: absolute;
+				left: 0;
+				top: 7px;
+				background-color: $secondary;
+				border-radius: 50%;
+				display: inline-block;
+			}
+		}
+	}
+}

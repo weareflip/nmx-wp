@@ -1,0 +1,124 @@
+/**
+ * Container styles
+ * Loads on front end and back end
+ */
+
+.boilerplate-block-container {
+	margin: 0;
+	position: relative;
+	overflow: hidden;
+	padding-top: var(--paddingTop);
+	padding-bottom: var(--paddingBottom);
+	@include media-breakpoint-down("lg") {
+		padding-top: var(--paddingTopTablet);
+		padding-bottom: var(--paddingBottomTablet);
+	}
+	@include media-breakpoint-down("md") {
+		padding-top: var(--paddingTopMobile);
+		padding-bottom: var(--paddingBottomMobile);
+	}
+
+	&.alignfull {
+		.block-editor-block-list__block {
+			max-width: 100%;
+		}
+	}
+
+	&.alignfull .boilerplate-container-inside,
+	&.alignfull .boilerplate-container-inside {
+
+		@media only screen and (min-width: 768px) {
+			max-width: 100%;
+			margin: 0 auto;
+		}
+	}
+
+	&.alignwide .boilerplate-container-inside,
+	&.alignwide .boilerplate-container-inside {
+
+		@media only screen and (min-width: 768px) {
+			max-width: 80%;
+			margin: 0 auto;
+		}
+	}
+
+	.boilerplate-container-bg{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		background: #FBFBFB;
+	}
+
+	.container{
+		position: relative;
+		z-index: 2;
+	}
+
+	.boilerplate-container-image-wrap {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		height: 100%;
+		z-index: 1;
+	}
+
+	.boilerplate-container-image {
+		object-fit: cover;
+		object-position: var(--bg-position, center);
+		height: 100%;
+		width: 100%;
+		transition: 0.3s ease;
+	}
+
+	.boilerplate-container-image:not(.has-background-dim) {
+		opacity: 0;
+	}
+
+	.has-background-dim {
+		opacity: 0.5;
+	}
+
+	.has-background-dim-10 {
+		opacity: 0.1;
+	}
+
+	.has-background-dim-20 {
+		opacity: 0.2;
+	}
+
+	.has-background-dim-30 {
+		opacity: 0.3;
+	}
+
+	.has-background-dim-40 {
+		opacity: 0.4;
+	}
+
+	.has-background-dim-50 {
+		opacity: 0.5;
+	}
+
+	.has-background-dim-60 {
+		opacity: 0.6;
+	}
+
+	.has-background-dim-70 {
+		opacity: 0.7;
+	}
+
+	.has-background-dim-80 {
+		opacity: 0.8;
+	}
+
+	.has-background-dim-90 {
+		opacity: 0.9;
+	}
+
+	.has-background-dim-100 {
+		opacity: 1;
+	}
+}

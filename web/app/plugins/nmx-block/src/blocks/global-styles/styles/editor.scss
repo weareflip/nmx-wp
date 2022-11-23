@@ -1,0 +1,164 @@
+/**
+Editor style
+*/
+.editor-styles-wrapper {
+	padding-left: 0;
+	padding-right: 0;
+}
+.block-editor-block-list__block {
+	> .nf-iframe-container {
+		> .nf-iframe-overlay {
+			> iframe {
+				width: 100%;
+			}
+		}
+	}
+}
+.block-editor-default-block-appender .block-editor-inserter__toggle.components-button.has-icon {
+	background-color: #007cba;
+}
+.is-root-container {
+	overflow: hidden;
+
+	.wp-block {
+		max-width: 1100px;
+	}
+
+	.wp-block[data-align="left"],
+	.wp-block[data-align="right"] {
+		height: auto;
+	}
+
+	.wp-block[data-align="full"] {
+		max-width: none;
+	}
+
+	p,
+	span,
+	a {
+		font-family: $font_primary;
+	}
+}
+
+.is-root-container.edit-widgets-main-block-list {
+	.wp-block {
+		max-width: 700px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.editor-styles-wrapper .container-xl,
+	.editor-styles-wrapper .container-lg,
+	.editor-styles-wrapper .container-md,
+	.editor-styles-wrapper .container-sm,
+	.editor-styles-wrapper .container {
+		max-width: 1140px;
+		width: 100%;
+		padding-right: 15px;
+		padding-left: 15px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+html :where(.wp-block) {
+	margin-top: 28px;
+	margin-bottom: 28px;
+}
+
+.block-editor-block-list__block .block-list-appender {
+	position: relative;
+}
+
+.editor-styles-wrapper {
+	.block-editor-block-list__layout {
+		p {
+			color: $color_body;
+			font-size: 14px;
+			line-height: 140%;
+		}
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: $color_body;
+			font-weight: bold;
+		}
+
+		h1 {
+			line-height: 120%;
+			font-size: 2.93em;
+			@include media-breakpoint-up("lg") {
+				font-size: 3.93em;
+			}
+		}
+
+		h2,
+		.h2 {
+			line-height: 120%;
+			font-size: 2.143em;
+			@include media-breakpoint-up("md") {
+				font-size: 3.143em;
+			}
+		}
+
+		h3,
+		.h3 {
+			line-height: 120%;
+			font-size: 2em;
+			@include media-breakpoint-up("md") {
+				font-size: 2.5em;
+			}
+		}
+
+		h4,
+		.h4 {
+			line-height: 120%;
+			font-size: 1.8em;
+			@include media-breakpoint-up("md") {
+				font-size: 2em;
+			}
+		}
+
+		h5,
+		.h5 {
+			line-height: 120%;
+			font-size: 1.2em;
+			@include media-breakpoint-up("md") {
+				font-size: 1.607em;
+			}
+		}
+
+		h6,
+		.h6 {
+			line-height: 120%;
+			font-size: 1em;
+			@include media-breakpoint-up("md") {
+				font-size: 1.25em;
+			}
+		}
+	}
+}
+
+.dashicons,
+.dashicons-before:before {
+	font-family: dashicons !important;
+}
+
+
+.block-editor-block-list__block{
+	.wp-block-gallery.boilerplate-gallery-hp{
+		> .wp-block-image{
+			> div{
+				justify-content: center;
+				text-align: center;
+				img{
+					margin-left: auto;
+					margin-right: auto;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+.boilerplate-card-sliders {
+	&.boilerplate-slider-edit{
+		.boilerplate-card-sliders-wrapper{
+			> .block-editor-inner-blocks{
+				> .block-editor-block-list__layout{
+					display: flex;
+					overflow: auto;
+					margin-right: 170px;
+					> div:not(.block-list-appender){
+						min-width: 560px;
+						margin-left: 20px;
+						margin-right: 20px;
+						max-width: 520px;
+						display: inline-block;
+					}
+					> .block-list-appender{
+						display: flex;
+						flex-wrap: wrap;
+						align-items: center;
+						align-content: center;	
+					}
+				}
+			}
+		}
+	}
+}

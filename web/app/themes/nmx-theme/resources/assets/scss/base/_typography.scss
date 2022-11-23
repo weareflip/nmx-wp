@@ -1,0 +1,87 @@
+/* =============== Typography related styles ================ */
+
+body,
+html {
+    font-family: $font_primary;
+    font-size: 14px;
+    line-height: 140%;
+    font-weight: normal;
+    font-stretch: normal;
+    color: $color_body;
+    font-style: normal;
+    letter-spacing: normal;
+    -webkit-font-variant-ligatures: none !important;
+    font-variant-ligatures: none !important;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+}
+
+// == Typography
+// ## Headings
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $color_body;
+    font-weight: bold;
+}
+
+h1 {
+    line-height: 120%;
+    font-size: 2.93em;
+    @include media-breakpoint-up("lg") {
+        font-size: 3.93em;
+    }
+}
+
+h2,
+.h2 {
+    line-height: 120%;
+    font-size: 2.143em;
+    @include media-breakpoint-up("md") {
+        font-size: 3.143em;
+    }
+}
+
+h3,
+.h3 {
+    line-height: 120%;
+    font-size: 2em;
+    @include media-breakpoint-up("md") {
+        font-size: 2.5em;
+    }
+}
+
+h4,
+.h4 {
+    line-height: 120%;
+    font-size: 1.8em;
+    @include media-breakpoint-up("md") {
+        font-size: 2em;
+    }
+}
+
+h5,
+.h5 {
+    line-height: 120%;
+    font-size: 1.2em;
+    @include media-breakpoint-up("md") {
+        font-size: 1.607em;
+    }
+}
+
+h6,
+.h6 {
+    line-height: 120%;
+    font-size: 1em;
+    @include media-breakpoint-up("md") {
+        font-size: 1.25em;
+    }
+}
+
+.color-primary {
+    color: $primary;
+}

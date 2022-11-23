@@ -1,0 +1,22 @@
+[data-type="tm-block/tm-single-post-block"].wp-block {
+	max-width: none;
+}
+
+
+.block-editor-block-list__block{
+		.boilerplate-grid-card-post-block{
+			&__slider{
+				display: flex !important;
+				overflow: auto;
+				margin-right: 170px;
+				.post-card-item{
+					min-width: 325px;
+					margin-left: 20px;
+					margin-right: 20px;
+					max-width: 325px;
+					display: inline-block;
+				}
+			}
+		}
+	
+}

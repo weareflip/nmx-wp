@@ -1,0 +1,62 @@
+.boilerplate-call-to-action-box-block{
+	width: 100%;
+	height: auto;
+	padding: 64px;
+	padding-top: var(--paddingTop);
+	padding-bottom: var(--paddingBottom);
+	padding-left: var(--paddingLeft);
+	padding-right: var(--paddingRight);
+	@include media-breakpoint-down("lg") {
+		padding-top: var(--paddingTopTablet);
+		padding-bottom: var(--paddingBottomTablet);
+		padding-left: var(--paddingLeftTablet);
+		padding-right: var(--paddingRightTablet);
+	}
+	@media only screen and (max-width: 767px){
+		padding: 0px;
+	}
+	&-content{
+		> .wp-block-columns{
+			align-items: center;
+			align-content: center;
+			@media only screen and (max-width: 781px){
+				justify-content: center;
+				gap: 10px;
+			}
+		}
+	}
+	.boilerplate-call-to-action-box__heading{
+		@media only screen and (max-width: 991px){
+			font-size: 35px !important;
+		}
+		@media only screen and (max-width: 767px){
+			font-size: 25px !important;
+		}
+	}
+	.boilerplate-call-to-action-box__text{
+		@media only screen and (max-width: 781px){
+			text-align: center;
+		}
+	}
+	.boilerplate-call-to-action-box__ctas{
+		width: 25%;
+		max-width: 25%;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		align-content: flex-start;
+		justify-content: end;
+		@media only screen and (max-width: 991px){
+			max-width: 28%;
+		}
+		@media only screen and (max-width: 767px){
+			max-width: 100%;
+			justify-content: center;
+		}
+		.wp-block-button__link{
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,167 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+.boilerplate-grid-card-post-block {
+	.boilerplate-grid-card-post-block__heading{
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+	.boilerplate-grid-card-post-wrap {
+		display: grid;
+		grid-template-columns: repeat(var(--col, 3), 1fr);
+		grid-row-gap: var(--gap-row, 40px);
+		grid-column-gap: var(--gap-col, 40px);
+		margin-bottom: 40px;
+		@include media-breakpoint-down(lg) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-row-gap: 20px;
+			grid-column-gap: 20px;
+		}
+		@include media-breakpoint-down(md) {
+			grid-template-columns: repeat(1, 1fr);
+			grid-row-gap: 30px;
+		}
+		.post-card-item {
+			background: #ffffff;
+			border-radius: 12px;
+			overflow: hidden;
+			padding: 24px;
+			@include media-breakpoint-down(md) {
+				padding: 0px;
+			}
+			&-image {
+				width: 100%;
+				height: 250px;
+				border-radius: 10px;
+				overflow: hidden;
+				margin-bottom: 16px;
+				background-color: #0d99ff;
+				a {
+					display: block;
+					height: 100%;
+					width: 100%;
+					position: relative;
+					img {
+						position: absolute;
+						top: 0;
+						left: 0;
+						height: 100%;
+						width: 100%;
+						object-fit: cover;
+						object-position: center;
+					}
+				}
+			}
+
+			&-content {
+				position: relative;
+				height: calc(100% - 250px);
+				padding-bottom: 23px;
+			}
+			&-title {
+				font-style: normal;
+				font-weight: 700;
+				font-size: 22.5px;
+				line-height: 120%;
+				color: rgba(0, 0, 0, 0.8);
+				margin-bottom: 16px;
+				a {
+					text-decoration: none;
+					&:hover {
+						color: $primary;
+					}
+				}
+			}
+			&-excerpt {
+				margin-bottom: 16px;
+				display: -webkit-box;
+				-webkit-line-clamp: 4;
+				-webkit-box-orient: vertical;  
+				overflow: hidden;
+			}
+
+			&-link {
+				font-style: normal;
+				font-weight: 700;
+				font-size: 14px;
+				line-height: 160%;
+				text-decoration: none;
+				position: absolute;
+				bottom: 24px;
+				left: 0;
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+	}
+
+
+	// slider post
+	&.sliders{
+		margin-right: calc((100% - 100vw) / 2);
+		position: relative;
+		.boilerplate-grid-card-post-wrap.boilerplate-grid-card-post-block__slider{
+			display: initial;
+			@include media-breakpoint-down(lg) {
+				grid-template-columns: none;
+				grid-row-gap: 0px;
+				grid-column-gap: 0px;
+			}
+			@include media-breakpoint-down(md) {
+				grid-template-columns: none;
+				grid-row-gap: 0px;
+			}
+		}
+		.boilerplate-grid-card-post-block__slider .post-card-item-link {
+			bottom: 10px;
+		}
+		.boilerplate-grid-card-post-wrap.boilerplate-grid-card-post-block__slider .post-card-item{
+			@include media-breakpoint-down(md) {
+				margin: 0 15px;
+			}
+			.post-card-item-image, .post-card-item-content{
+				max-width: 325px;
+			}
+		}
+	}
+
+	&__slider{
+		.slick-list{
+			padding-left: 0 !important;
+			padding-right: 270px !important;
+			padding-right: 17% !important;
+			@include media-breakpoint-down(md) {
+				padding-right: 10% !important;
+			}
+		}
+
+		.slick-arrow{
+			top:inherit;
+			left: 0;
+			bottom: -90px;
+			right: inherit;
+			width: 48px;
+			height: 48px;
+			background-color: rgba(0, 0, 0, 0.8);
+			background-size: auto;
+			&.slick-prev{
+				left: 20px;
+				background-image: url('../assets/images/icon-arrow-prev.svg');
+				transform: rotate(0deg);
+			}
+
+			&.slick-next{
+				left: 92px;
+				background-image: url('../assets/images/icon-arrow-next.svg');
+			}
+
+			&:hover, &:focus{
+				background-color: #0d99ff;
+			}
+		}
+	}
+}

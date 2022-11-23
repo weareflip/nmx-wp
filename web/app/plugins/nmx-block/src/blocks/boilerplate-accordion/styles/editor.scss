@@ -1,0 +1,27 @@
+.block-editor{
+   .boilerplate-accordion-block{
+    box-shadow: 0 3px 6px #00000029, 0 3px 6px #0000003b;
+        .inner-wrap {
+            .qa-item {
+                padding: 0;
+                .qa-question{
+                    padding: 24px;
+                    background-color: #eee;
+                    .qa-item-icon{
+                        &::after{
+                            content: none !important;
+                        }
+                        &::before{
+                            opacity: 1 !important;
+                            z-index: 9 !important;
+                        }
+                    }
+                }
+
+                .qa-answer{
+                    padding:24px 24px;
+                }
+            }
+        }
+   }
+}

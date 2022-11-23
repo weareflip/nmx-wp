@@ -1,0 +1,16 @@
+.block-editor{
+	.boilerplate-call-to-action-box-block{
+		.boilerplate-call-to-action-box-block-content{
+			> .block-editor-inner-blocks{
+				> .block-editor-block-list__layout{
+					> .wp-block-columns{
+						.boilerplate-call-to-action-box__ctas{
+							width: 25%;
+							max-width: 25%;
+						}
+					}
+				}
+			}
+		}
+	}
+}

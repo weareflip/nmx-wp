@@ -1,0 +1,159 @@
+.nf-form-cont{
+    .ninja-forms-form-wrap{
+        .nf-form-layout{
+            .nf-form-fields-required{
+                display: none;
+            }
+            form{
+                .nf-form-content{
+                    .nf-after-field{
+                        .nf-error-msg{
+                            margin: 0;
+                            text-align: left;
+                            font-size: 14px;
+                        }
+
+                    }
+                    .nf-field-container{
+                        margin-bottom: 20px;
+                    }
+                    .nf-field{
+                        .nf-field-label{
+                            .ninja-forms-req-symbol{
+                                color: $primary;
+                            }
+                        }
+                        input, textarea{
+                            background: #FFFFFF;
+                            border: 1px solid rgba(0, 0, 0, 0.8);
+                            padding: 12px 16px;
+                        }
+                        input, textarea, input::placeholder, textarea::placeholder{
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 15px;
+                            line-height: 187%;
+                            color: rgba(0, 0, 0, 0.8);
+                        }
+                        input::placeholder, textarea::placeholder{
+                            opacity: 0.7;
+                        }
+
+                        input{
+                            height: 52px;
+                        }
+
+                        .submit-wrap{
+                            .nf-field-element{
+                                input{
+                                    background: $primary;
+                                    border-radius: 100px;
+                                    font-size: 16px;
+                                    line-height: 150%;
+                                    color: #fff;
+                                    padding: 14px 20px;
+                                    border-color: $primary;
+                                    transition: all .2s ease-out;
+                                    // min-width: 200px;
+                                    &:hover{
+                                        background-color: #fff;
+                                        color: $primary;
+                                    }
+                                }
+                            }
+                        }
+                        .nf-field-element{
+                            &::after{
+                                height: 50px;
+                            }
+                        }
+                    }
+                }
+
+                .nf-after-form-content{
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    &#nf-form-1-cont{
+        .nf-form-content label{
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 170%;
+        }
+        .nf-form-content .label-above .nf-field-label{
+            margin-bottom: 0;
+        }
+
+        .nf-form-content textarea.ninja-forms-field{
+            height: 180px;
+            @media only screen and (max-width: 767px) {
+                height: 80px;
+            }
+        }
+        .ninja-forms-form-wrap .nf-form-layout form .nf-form-content .nf-field .submit-wrap .nf-field-element input{
+            font-size: 20px;
+            line-height: 120%;
+            font-style: normal;
+            font-weight: 700;
+            width: 200px;
+            height: 60px;
+            @media only screen and (max-width: 767px) {
+                width: 105px;
+            }
+        }
+    }
+}
+
+
+// style form in section hero
+.boilerplate-form-hero{
+    .nf-form-cont{
+        .nf-form-title{
+            display: none;
+        }
+
+        .nf-form-layout{
+            form{
+                width: 100%;
+                max-width: 527px;
+                @media only screen and (max-width: 991px) {
+                    max-width: 100%;
+                }
+                .nf-form-content {
+                    > nf-fields-wrap{
+                        display: flex;
+                        align-items: center;
+                        align-content: center;
+                        @media only screen and (max-width: 540px) {
+                            flex-wrap: wrap;
+                        }
+                        > nf-field{
+                            .nf-field-label {
+                                display: none;
+                            }
+                            &:first-child{
+                                width: calc(100% - 105px);
+                                padding-right: 10px;
+                                @media only screen and (max-width: 540px) {
+                                    width: 100%;
+                                }
+                            }
+                            &:last-child{
+                                width: 105px;
+                                @media only screen and (max-width: 540px) {
+                                    width: 100%;
+                                    .submit-wrap .nf-field-element input {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
