@@ -1,0 +1,97 @@
+@mixin anti-alias($value: true) {
+  $webkit-value: $value;
+  $moz-value: $value;
+
+  @if ($value == true or $value == on or $value == antialiased or $value == grayscale ) {
+    $webkit-value: antialiased;
+    $moz-value: grayscale;
+  }
+  @else if ($value == false or $value == off or $value == "subpixel-antialiased" or $value == auto ) {
+    $webkit-value: subpixel-antialiased;
+    $moz-value: auto;
+  }
+
+  -webkit-font-smoothing: $webkit-value;
+  -moz-osx-font-smoothing: $moz-value;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+@for $i from 1 through 5 {
+  .font-size-#{$i} { font-size: #{$i / 2}em; }
+}
+
+.font-weight-bold {
+  @include anti-alias;
+  @extend .font-weight-bold;
+}
+
+.font-weight-light {
+  @include anti-alias;
+  @extend .font-weight-light;
+}
+
+.bg-dark-grey h2,
+.bg-dark-grey h3 {
+  @include anti-alias;
+}
+
+.font-normal {
+  font-size: 1em !important;
+}
+
+.font-medium {
+  font-size: 1.2em !important;
+}
+
+.font-large {
+  font-size: 1.4em !important;
+}
+
+.font-x-large {
+  font-size: 1.6em !important;
+}
+
+.font-xx-large {
+  font-size: 2em !important;
+}
+
+.font-xxx-large {
+  font-size: 3em !important;
+}
+
+.text-red {
+  color: $primary-color;
+}
+
+a.text-red {
+  &:hover {
+    color: darken($primary-color, 15%);
+  }
+}
+
+a.text-white {
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-black {
+  color: #000;
+}
+
+@for $i from 1 through 3 {
+  .columns-#{$i} {
+    columns: #{$i};
+  }
+}
+
+hr {
+  height: 1px;
+}

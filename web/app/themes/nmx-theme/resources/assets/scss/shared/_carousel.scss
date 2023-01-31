@@ -1,0 +1,18 @@
+.carousel-indicators {
+  list-style: none;
+  padding: 0;
+  margin-bottom: .5em;
+
+  li {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    height: 10px;
+    margin-right: 1px;
+    width: 10px;
+
+    &.active {
+      background-color: #fff;
+    }
+  }
+}

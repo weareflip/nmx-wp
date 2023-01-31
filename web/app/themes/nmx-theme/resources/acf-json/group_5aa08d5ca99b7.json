@@ -1,0 +1,384 @@
+{
+    "key": "group_5aa08d5ca99b7",
+    "title": "Page",
+    "fields": [
+        {
+            "key": "field_5aa08d5db6e7b",
+            "label": "Component",
+            "name": "component",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "5aa08d690b74d": {
+                    "key": "5aa08d690b74d",
+                    "name": "icons",
+                    "label": "Icons component",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aa08d6eb6e7c",
+                            "label": "Icons Component",
+                            "name": "icons_component",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5aa08d332eff9"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5aa5efff3706c": {
+                    "key": "5aa5efff3706c",
+                    "name": "carousel-header",
+                    "label": "Carousel header component",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aa5f00d3706d",
+                            "label": "Carousel header component",
+                            "name": "carousel_header_component",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5aa5f0eeb0f24"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5aa5ff7ac67bc": {
+                    "key": "5aa5ff7ac67bc",
+                    "name": "video",
+                    "label": "Video component",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aa5ff82c67bd",
+                            "label": "Video component",
+                            "name": "video_component",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5aa5e203de66f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5aa60549ac5a9": {
+                    "key": "5aa60549ac5a9",
+                    "name": "contact-us",
+                    "label": "Contact us form",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aa60550ac5aa",
+                            "label": "Contact us component",
+                            "name": "contact_us_component",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5aa603a57e29d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5aa60c0be23e6": {
+                    "key": "5aa60c0be23e6",
+                    "name": "auction",
+                    "label": "Auction component",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aa60c14e23e7",
+                            "label": "Auction component",
+                            "name": "auction_component",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5aa60bfc708bb"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5aa60e3f2c810": {
+                    "key": "5aa60e3f2c810",
+                    "name": "who-we-are-intro",
+                    "label": "Who we are intro component",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aa60e4a2c811",
+                            "label": "Who we are component",
+                            "name": "who_we_are_component",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5aa60e3faf4d6"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5aa703476d414": {
+                    "key": "5aa703476d414",
+                    "name": "text-section",
+                    "label": "Text section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aa7034e6d415",
+                            "label": "Text section",
+                            "name": "text_section",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5aa62d2946353"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5aa7749b905d4": {
+                    "key": "5aa7749b905d4",
+                    "name": "locations",
+                    "label": "Locations map",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aa774a2905d5",
+                            "label": "Locations section",
+                            "name": "locations_section",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5aa77336c22c3"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5aa77e7bb0da7": {
+                    "key": "5aa77e7bb0da7",
+                    "name": "services",
+                    "label": "Services icon component",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aa77e7fb0da8",
+                            "label": "Services section",
+                            "name": "services_section",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5aa77e0363cff"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5aa9b8d29b09f": {
+                    "key": "5aa9b8d29b09f",
+                    "name": "faq",
+                    "label": "FAQ component",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aa9b8db9b0a0",
+                            "label": "FAQ section",
+                            "name": "faq_section",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5aa9b8658cc3e"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5aa9c22b0dc5a": {
+                    "key": "5aa9c22b0dc5a",
+                    "name": "bidders-support",
+                    "label": "Bidders Tech Support component",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aa9c2330dc5b",
+                            "label": "Bidders Support Section",
+                            "name": "bidders_support_section",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5aa9c0824a1d2"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Component",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1675157804
+}

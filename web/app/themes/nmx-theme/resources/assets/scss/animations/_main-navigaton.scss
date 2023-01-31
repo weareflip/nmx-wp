@@ -1,0 +1,10 @@
+.navbar .navbar-collapse {
+  .navbar-footer {
+    opacity: 0;
+  }
+
+  &.show .navbar-footer {
+    opacity: 1;
+    transition: opacity ease-in-out 300ms;
+  }
+}

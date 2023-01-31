@@ -1,0 +1,12 @@
+.services-component {
+  @include media-breakpoint-up(lg) {
+    .service {
+      max-width: 285px;
+    }
+
+    .service-flex-break {
+      height: 0;
+      width: 100%;
+    }
+  }
+}

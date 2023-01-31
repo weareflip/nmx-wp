@@ -1,5 +1,6 @@
 module.exports = {
-	plugins: {
-		autoprefixer: { browsers: [ 'last 2 versions' ], grid: true },
-	},
-};
+    plugins: [
+        require('autoprefixer'),
+        require('postcss-flexbugs-fixes')
+    ]
+}

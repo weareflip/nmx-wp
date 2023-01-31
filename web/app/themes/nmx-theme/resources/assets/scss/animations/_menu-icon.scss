@@ -1,0 +1,27 @@
+.menu-icon {
+  $icon-color: #fff;
+  height: 2em;
+  position: relative;
+  width: 2em;
+
+  .menu-icon-bar1,
+  .menu-icon-bar2,
+  .menu-icon-bar3 {
+    transition: transform 300ms, opacity 200ms;
+  }
+
+  &.active {
+    .menu-icon-bar1 {
+      transform: rotate(45deg) translateX(20%) translateY(-10%);
+    }
+
+    .menu-icon-bar2 {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    .menu-icon-bar3 {
+      transform: rotate(-45deg) translateX(-50%) translateY(-10%);
+    }
+  }
+}

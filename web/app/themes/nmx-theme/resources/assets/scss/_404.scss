@@ -1,0 +1,18 @@
+.file-not-found-section {
+  height: 82vh;
+  position: relative;
+
+  .background {
+    background: url('/media/images/404-background.jpg') no-repeat;
+    background-size: cover;
+    filter: contrast(50%) brightness(0.4);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .content {
+    z-index: 1001;
+  }
+}

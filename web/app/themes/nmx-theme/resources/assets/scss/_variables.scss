@@ -1,0 +1,33 @@
+$menu-background-dark: #000;
+$menu-background: #fff;
+
+$menu-color-dark: #fff;
+$menu-color: #000;
+
+$primary-color: #ED1D24;
+$medium-grey-color: #EAEBED;
+$dark-grey-color: #2C2D2E;
+$tinted-grey-color: #63686B;
+
+$button-color: $primary-color;
+
+$font-family-sans-serif: 'Helvetica', serif;
+$alternate-font: "Montserrat", sans-serif;
+$headings-font: $alternate-font;
+
+$body-background-color: #F8FAFB;
+
+$component-padding: 2.5em 1.5em 1em;
+$component-max-width: 1440px;
+
+$spacer: 1rem;
+
+$spacers: (
+  2-5: ($spacer * .75),
+  5: ($spacer * 3),
+  6: ($spacer * 4),
+  7: ($spacer * 5),
+  8: ($spacer * 6),
+  9: ($spacer * 7),
+  10: ($spacer * 8)
+);

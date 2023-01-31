@@ -1,0 +1,26 @@
+.who-we-are-intro-component .background {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50vw;
+
+  .background-shape svg {
+    width: 100%;
+  }
+
+  .background-logo {
+    position: absolute;
+    right: 5vw;
+    top: 15vw;
+    height: 15vw;
+
+    svg {
+      max-height: 100%;
+      max-width: 100% !important;
+    }
+  }
+
+  @media screen and (min-width: 1700px) {
+    width: 855px;
+  }
+}

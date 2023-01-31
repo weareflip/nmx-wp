@@ -1,0 +1,76 @@
+// Fonts
+@import "../fonts/fonts.css";
+
+// Local Variables & Overrides
+@import "variables";
+
+// Local Mix-ins
+//@import "mixins/all";
+
+// Bootstrap
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+//@import "~bootstrap/scss/forms";
+//@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/_transitions";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/card";
+
+@import "~tingle.js/dist/tingle.min.css";
+
+// Libraries
+
+//App
+@import "utils/all";
+
+@import "animations/all";
+@import "components/all";
+@import "shared/all";
+@import "404";
+
+body {
+  background-color: $body-background-color;
+  font-family: $alternate-font;
+  font-weight: 400;
+}
+
+.icon {
+  @include anti-alias;
+  line-height: inherit;
+
+  &:before {
+    height: 1em;
+    vertical-align: baseline !important;
+  }
+
+  &.text-red:hover {
+    color: darken($primary-color, 10%);
+  }
+}
+
+a.text-white:hover {
+  color: $primary-color !important;
+}
+
+@include media-breakpoint-down(lg) {
+  .text-component + .text-component {
+    padding-top: 0 !important;
+  }
+}
+
+a {
+  color: $primary-color;
+}
+
+img {
+  max-width: 100%;
+}

@@ -1,0 +1,49 @@
+.site-footer {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: .9em;
+
+  hr.text-white {
+    border-color: #fff;
+  }
+}
+
+@keyframes flip-logo {
+  0% {
+    transform: rotateX(360deg);
+  }
+
+  30% {
+    transform: rotateX(360deg);
+  }
+
+  50% {
+    transform: rotateX(180deg);
+  }
+
+  70% {
+    transform: rotateX(0deg);
+  }
+
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+
+.anim-flip-logo {
+  perspective: 48px;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg);
+
+  &:hover {
+    animation: flip-logo 5s ease-in-out infinite;
+  }
+
+  svg {
+    height: 2.4em;
+    width: 2.4em;
+  }
+}

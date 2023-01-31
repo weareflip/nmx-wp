@@ -17,7 +17,12 @@
     }
   ],
   "keywords": [
-    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
+    "bedrock",
+    "composer",
+    "roots",
+    "wordpress",
+    "wp",
+    "wp-config"
   ],
   "support": {
     "issues": "https://github.com/roots/bedrock/issues",
@@ -26,8 +31,20 @@
   "repositories": [
     {
       "type": "composer",
-      "url": "https://wpackagist.org",
-      "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-premium/advanced-custom-fields-pro",
+        "type": "wordpress-plugin",
+        "version": "5.8.7",
+        "source": {
+          "url": "https://github.com/wp-premium/advanced-custom-fields-pro",
+          "type": "git",
+          "reference": "master"
+        }
+      }
     }
   ],
   "require": {
@@ -39,11 +56,9 @@
     "roots/wordpress": "5.7",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "wpackagist-plugin/ninja-forms": "^3.4",
-    "wpackagist-plugin/wordpress-seo": "^15.9",
-    "wpackagist-plugin/svg-support": "^2.3",
-    "wpackagist-plugin/duplicate-post":"4.5",
-    "wpackagist-plugin/regenerate-thumbnails":"3.1.5"
+    "wp-premium/advanced-custom-fields-pro": "^5.8.7",
+    "wpackagist-plugin/classic-editor": "^1.5",
+    "wpackagist-plugin/relevanssi": "4.17.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.5.8",
@@ -61,9 +76,15 @@
   "prefer-stable": true,
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
     "wordpress-install-dir": "web/wp"
   },

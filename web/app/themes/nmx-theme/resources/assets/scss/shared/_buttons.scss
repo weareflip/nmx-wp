@@ -1,0 +1,91 @@
+.button {
+  cursor: pointer;
+  //@include anti-alias;
+
+  &:not(.button-link) {
+    background: $primary-color;
+    border-radius: 3px;
+    border: 0;
+    color: #fff;
+    display: inline-block;
+    font-family: $alternate-font;
+    font-weight: 600;
+    font-size: .95em;
+    margin-bottom: .75em;
+    padding: .75em 3em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition: all ease-in-out 150ms;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  &.button-link {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font-size: 1rem;
+    outline: none;
+
+    transition: color ease-in-out 150ms;
+
+    &:hover {
+      background: none;
+      color: $primary-color;
+    }
+  }
+
+  &.button-icon {
+    align-items: center;
+    display: flex;
+    padding: 0;
+
+    .icon {
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      font-size: 1.5em;
+      padding: .9em;
+    }
+
+    .caption {
+      padding: 1em;
+    }
+  }
+
+  &.button-outline {
+    background: none;
+    border: 1px solid #fff;
+    color: inherit;
+
+    &:hover {
+      background: none;
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &.button-full-mobile {
+      display: block;
+      width: 100% !important;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &.button-outline-desktop {
+      background: none;
+      border: 1px solid #fff;
+      max-width: 250px;
+
+      &:hover {
+        background: none;
+        border-color: $primary-color;
+        color: $primary-color;
+      }
+    }
+  }
+}

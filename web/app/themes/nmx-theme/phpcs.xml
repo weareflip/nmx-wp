@@ -1,110 +1,71 @@
 <?xml version="1.0"?>
-<ruleset name="WordPress Theme Coding Standards">
-	<!-- See https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
-	<!-- See https://github.com/WordPress/WordPress-Coding-Standards -->
-	<!-- See https://github.com/WPTRT/WPThemeReview -->
-	<!-- See https://github.com/PHPCompatibility/PHPCompatibilityWP -->
+<ruleset name="Roots">
+  <description>Roots Coding Standards</description>
 
-	<!-- Set a description for this ruleset. -->
-	<description>A custom set of code standard rules to check for WordPress themes.</description>
+  <!-- Scan these files -->
+  <file>resources/functions.php</file>
+  <file>resources/index.php</file>
+  <file>app</file>
+  <file>resources/views</file>
 
+  <!-- Show colors in console -->
+  <arg value="-colors"/>
 
-	<!--
-	#############################################################################
-	COMMAND LINE ARGUMENTS
-	https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml
-	#############################################################################
-	-->
+  <!-- Show sniff codes in all reports -->
+  <arg value="s"/>
 
-	<!-- Pass some flags to PHPCS:
-		 p flag: Show progress of the run.
-		 s flag: Show sniff codes in all reports.
-	-->
-	<arg value="ps"/>
+  <!-- Use PSR-2 as a base -->
+  <rule ref="PSR2"/>
 
-	<!-- Strip the filepaths down to the relevant bit. -->
-	<arg name="basepath" value="./"/>
+  <!-- Exclusions below are for resources/views/ folder -->
 
-	<!-- Check up to 8 files simultanously. -->
-	<arg name="parallel" value="8"/>
+  <!-- Allow php files without any PHP in them -->
+  <rule ref="Internal.NoCodeFound">
+    <exclude-pattern>resources/views</exclude-pattern>
+  </rule>
 
-	<!-- Only check the PHP files. JS, and CSS files are checked separately with @wordpress/scripts package. -->
-	<arg name="extensions" value="php"/>
+  <!-- Allow braces on same line for named functions -->
+  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine">
+    <exclude-pattern>resources/views</exclude-pattern>
+  </rule>
 
-	<!-- Check all files in this directory and the directories below it. -->
-	<file>.</file>
+  <!-- Allow closing braces to be on the same line -->
+  <rule ref="Squiz.WhiteSpace.ScopeClosingBrace">
+    <exclude-pattern>resources/views</exclude-pattern>
+  </rule>
 
-	<!-- Exclude patterns. -->
-	<exclude-pattern>/vendor/*</exclude-pattern>
-	<exclude-pattern>/node_modules/*</exclude-pattern>
+  <!-- Disable newline after opening brace -->
+  <rule ref="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace">
+    <exclude-pattern>resources/views</exclude-pattern>
+  </rule>
 
+  <!-- Allow multiple PHP statements in the same line -->
+  <rule ref="Generic.Formatting.DisallowMultipleStatements.SameLine">
+    <exclude-pattern>resources/views</exclude-pattern>
+  </rule>
 
-	<!--
-	#############################################################################
-	USE THE WordPress AND THE Theme Review RULESET
-	#############################################################################
-	-->
+  <!-- Disable PSR-2 indentation rules that are buggy with 2 spaces -->
+  <rule ref="PSR2.ControlStructures.SwitchDeclaration.BreakIndent">
+    <exclude-pattern>resources/views</exclude-pattern>
+  </rule>
 
-	<rule ref="WordPress">
-		<!-- This rule does not apply here since the _s prefix should be changed by the theme author. -->
-		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
-	</rule>
-	<rule ref="WPThemeReview"/>
+  <!-- Don't require a blank line after the last `use` -->
+  <rule ref="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse">
+    <exclude-pattern>resources/views</exclude-pattern>
+  </rule>
 
-	<!--
-	#############################################################################
-	SNIFF SPECIFIC CONFIGURATION
-	#############################################################################
-	-->
+  <!-- Allow long lines -->
+  <rule ref="Generic.Files.LineLength.TooLong">
+    <exclude-pattern>resources/views</exclude-pattern>
+  </rule>
 
-	<!-- Verify that the text_domain is set to the desired text-domain.
-		 Multiple valid text domains can be provided as a comma-delimited list. -->
-	<rule ref="WordPress.WP.I18n">
-		<properties>
-			<property name="text_domain" type="array" value="_s"/>
-		</properties>
-	</rule>
+  <!-- Ignore indentation rules -->
+  <rule ref="Generic.WhiteSpace.ScopeIndent">
+    <exclude-pattern>resources/views</exclude-pattern>
+  </rule>
 
-	<!-- Allow for theme specific exceptions to the file name rules based
-		 on the theme hierarchy. -->
-	<rule ref="WordPress.Files.FileName">
-		<properties>
-			<property name="is_theme" value="true"/>
-		</properties>
-	</rule>
-
-	<!-- Set the minimum supported WP version. This is used by several sniffs.
-		 The minimum version set here should be in line with the minimum WP version
-		 as set in the "Requires at least" tag in the readme.txt file. -->
-	<config name="minimum_supported_wp_version" value="4.5"/>
-
-	<rule ref="WordPress.Arrays.MultipleStatementAlignment">
-		<properties>
-			<!-- No need to adjust alignment of large arrays when the item with the largest key is removed. -->
-			<property name="exact" value="false"/>
-			<!-- Don't align multi-line items if ALL items in the array are multi-line. -->
-			<property name="alignMultilineItems" value="!=100"/>
-			<!-- Array assignment operator should always be on the same line as the array key. -->
-			<property name="ignoreNewlines" value="false"/>
-		</properties>
-	</rule>
-
-	<!-- Verify that everything in the global namespace is prefixed with a theme specific prefix.
-		 Multiple valid prefixes can be provided as a comma-delimited list. -->
-	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
-		<properties>
-			<property name="prefixes" type="array" value="_s" />
-		</properties>
-	</rule>
-
-
-	<!--
-	#############################################################################
-	USE THE PHPCompatibility RULESET
-	#############################################################################
-	-->
-
-	<config name="testVersion" value="5.6-"/>
-	<rule ref="PHPCompatibilityWP"/>
-
+  <!-- Allow PHP closing tags -->
+  <rule ref="PSR2.Files.ClosingTag.NotAllowed">
+    <exclude-pattern>resources/views</exclude-pattern>
+  </rule>
 </ruleset>

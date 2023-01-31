@@ -1,0 +1,33 @@
+.red-border-left {
+  padding-left: .6em;
+  position: relative;
+
+  // Border is slightly smaller than container
+  &:before {
+    background-color: $primary-color;
+    content: ' ';
+    height: 80%;
+    left: 0;
+    position: absolute;
+    top: 7%;
+    width: 13px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: .5em;
+  }
+}
+
+.red-border-small-left {
+  @extend .red-border-left;
+
+  padding-left: 1.2em;
+
+  &:before {
+    width: 10px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 1em;
+  }
+}

@@ -1,2 +1,24 @@
-@import "vars";
-@import "vendor";
+// Variables
+@import "variables";
+
+// Utils
+@import "utils/all";
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+
+// Utils
+@import "shared/all";
+
+body {
+  background-color: $body-background-color;
+  font-family: $alternate-font;
+  font-weight: 400;
+}
+
+img {
+  max-width: 100%;
+}

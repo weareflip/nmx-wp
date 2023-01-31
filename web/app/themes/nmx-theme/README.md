@@ -1,86 +1,120 @@
-# Wordpress Toolkit Starter Theme
+# [Sage](https://roots.io/sage/)
+[![Packagist](https://img.shields.io/packagist/vpre/roots/sage.svg?style=flat-square)](https://packagist.org/packages/roots/sage)
+[![devDependency Status](https://img.shields.io/david/dev/roots/sage.svg?style=flat-square)](https://david-dm.org/roots/sage#info=devDependencies)
+[![Build Status](https://img.shields.io/travis/roots/sage.svg?style=flat-square)](https://travis-ci.org/roots/sage)
 
-## Initial Setup and Build
+Sage is a WordPress starter theme with a modern development workflow.
 
-Upon installation of the theme in a dev environment, make sure to run the following commands in the root directory of the theme to setup things...
+## Features
+
+* Sass for stylesheets
+* Modern JavaScript
+* [Webpack](https://webpack.github.io/) for compiling assets, optimizing images, and concatenating and minifying files
+* [Browsersync](http://www.browsersync.io/) for synchronized browser testing
+* [Blade](https://laravel.com/docs/5.6/blade) as a templating engine
+* [Controller](https://github.com/soberwp/controller) for passing data to Blade templates
+* CSS framework (optional): [Bootstrap 4](https://getbootstrap.com/), [Bulma](https://bulma.io/), [Foundation](https://foundation.zurb.com/), [Tachyons](http://tachyons.io/), [Tailwind](https://tailwindcss.com/)
+
+See a working example at [roots-example-project.com](https://roots-example-project.com/).
+
+## Requirements
+
+Make sure all dependencies have been installed before moving on:
+
+* [WordPress](https://wordpress.org/) >= 4.7
+* [PHP](https://secure.php.net/manual/en/install.php) >= 7.1.3 (with [`php-mbstring`](https://secure.php.net/manual/en/book.mbstring.php) enabled)
+* [Composer](https://getcomposer.org/download/)
+* [Node.js](http://nodejs.org/) >= 8.0.0
+* [Yarn](https://yarnpkg.com/en/docs/install)
+
+## Theme installation
+
+Install Sage using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
+
 ```shell
-composer install
-npm install 
-npm run build:blocks
-npm run build:dev
+# @ app/themes/ or wp-content/themes/
+$ composer create-project roots/sage your-theme-name
 ```
 
-This will compile the blocks, and assets for the theme and let you get straight into development.
+To install the latest development version of Sage, add `dev-master` to the end of the command:
 
-If you wish to disable the main Gutenburg stylesheets on the frontend, uncomment `Line 18` in `resources/functions/reset.php` and this will unenqueue the front-end styles that come from Gutenburg.
-
-There is a shortcut script to compile assets + blocks at the same time with `npm run dev`.
-
-## Block Development
-
-This theme allows the developer to add their own custom blocks to the Gutenburg editing experience. All blocks are compiled with `@wordpress/scripts` and are included in the theme via the `resources/functions/blocks.php` file. You can check this file out and edit it to change things how you see fit.
-
-### Theme-based Blocks
-
-To develop new blocks in the theme, create them wtihin the `resources/assets/blocks` folder and import the block's entrypoint in `resources/assets/blocks/custom-blocks.js`
-
-You will also need to add the blocks namespace (the one you use when registering with `registerCustomBlock('example/test-block', ...{})`) to the `resources/assets/blocks/blocks-manifest.php` file so it can be registered into the Gutenburg framework.
-
-### Block Styles
-
-You can add extra block styles to the `resources/assets/blocks/block-styles.js` file and they will be part of the compilation process.
-
-### Scoped Theme Classes
-
-In the theme there is a SASS mixin included in the `resources/assets/css/_mixins.scss` file.
-
-First, you'll need to define your scoped name in `resources/assets/scss/_vars.scss` like so...
-```scss
-$settings: (
-  "scoped-name": "fincorp",
-);
+```shell
+$ composer create-project roots/sage your-theme-name dev-master
 ```
 
-Then, for example, when you have the following block style defined...
-```js
-wp.blocks.registerBlockStyle( 'core/heading', {
-	name: 'ausdeck-callout-heading',
-	label: 'Ausdeck Callout Heading',
-} );
+During theme installation you will have options to update `style.css` theme headers, select a CSS framework, and configure Browsersync.
+
+## Theme structure
+
+```shell
+themes/your-theme-name/   # → Root of your Sage based theme
+├── app/                  # → Theme PHP
+│   ├── Controllers/      # → Controller files
+│   ├── admin.php         # → Theme customizer setup
+│   ├── filters.php       # → Theme filters
+│   ├── helpers.php       # → Helper functions
+│   └── setup.php         # → Theme setup
+├── composer.json         # → Autoloading for `app/` files
+├── composer.lock         # → Composer lock file (never edit)
+├── dist/                 # → Built theme assets (never edit)
+├── node_modules/         # → Node.js packages (never edit)
+├── package.json          # → Node.js dependencies and scripts
+├── resources/            # → Theme assets and templates
+│   ├── assets/           # → Front-end assets
+│   │   ├── config.json   # → Settings for compiled assets
+│   │   ├── build/        # → Webpack and ESLint config
+│   │   ├── fonts/        # → Theme fonts
+│   │   ├── images/       # → Theme images
+│   │   ├── scripts/      # → Theme JS
+│   │   └── styles/       # → Theme stylesheets
+│   ├── functions.php     # → Composer autoloader, theme includes
+│   ├── index.php         # → Never manually edit
+│   ├── screenshot.png    # → Theme screenshot for WP admin
+│   ├── style.css         # → Theme meta information
+│   └── views/            # → Theme templates
+│       ├── layouts/      # → Base templates
+│       └── partials/     # → Partial templates
+└── vendor/               # → Composer packages (never edit)
 ```
 
-You can apply it within your stylesheets like so...
-```scss
-@include theme-scoped {
-  &-callout-heading {
-    font-size: 1.75em;
-    color: map_get($themeColors, "medium-blue");
-    font-weight: 500;
-    line-height: 1; // squish it together.
-    font-family: "FS Untitled", "Helvetica", sans-serif;
-  }
-}
-```
+## Theme setup
 
-This will output something like...
-```css
-.is-style-ausdeck-callout-heading {
-    font-size: 1.75em;
-    color: #000;
-    font-weight: 500;
-    line-height: 1; // squish it together.
-    font-family: "FS Untitled", "Helvetica", sans-serif;
-}
-```
+Edit `app/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, and sidebars.
 
-## Asset Management
+## Theme development
 
-There are JS and SCSS folders within `resources/assets` as well as a custom `webpack.config.js` in that folder to control the build processes. The main `build:dev` task uses this config to build and compile the assets.
+* Run `yarn` from the theme directory to install dependencies
+* Update `resources/assets/config.json` settings:
+  * `devUrl` should reflect your local development hostname
+  * `publicPath` should reflect your WordPress folder structure (`/wp-content/themes/sage` for non-[Bedrock](https://roots.io/bedrock/) installs)
 
-Currently, this theme ships with Bootstrap SASS by default and is included in the `resources/assets/scss/_vendor.scss` file.
+### Build commands
 
-## Template Hierarchy and Custom Pages
+* `yarn start` — Compile assets when file changes are made, start Browsersync session
+* `yarn build` — Compile and optimize the files in your assets directory
+* `yarn build:production` — Compile assets for production
 
-Everything else about the theme is stock-standard and is actually forked from _S's, the Wordpress-backed sane-defaults theme and has been extended to meet our purposes for custom development.
+## Documentation
 
-If you have any questions or want to submit a PR, please contact me at michael@weareflip.com
+* [Sage documentation](https://roots.io/sage/docs/)
+* [Controller documentation](https://github.com/soberwp/controller#usage)
+
+## Contributing
+
+Contributions are welcome from everyone. We have [contributing guidelines](https://github.com/roots/guidelines/blob/master/CONTRIBUTING.md) to help you get started.
+
+## Sage sponsors
+
+Help support our open-source development efforts by [becoming a patron](https://www.patreon.com/rootsdev).
+
+<a href="https://kinsta.com/?kaid=OFDHAJIXUDIV"><img src="https://cdn.roots.io/app/uploads/kinsta.svg" alt="Kinsta" width="200" height="150"></a> <a href="https://k-m.com/"><img src="https://cdn.roots.io/app/uploads/km-digital.svg" alt="KM Digital" width="200" height="150"></a> <a href="https://www.itineris.co.uk/"><img src="https://cdn.roots.io/app/uploads/itineris.svg" alt="itineris" width="200" height="150"></a> <a href="http://www.hbgdesignlab.se/"><img src="https://cdn.roots.io/app/uploads/helsingborgdesignlab.png" alt="Helsingborg Design LAB" with="200" height="150">
+
+## Community
+
+Keep track of development and community news.
+
+* Participate on the [Roots Discourse](https://discourse.roots.io/)
+* Follow [@rootswp on Twitter](https://twitter.com/rootswp)
+* Read and subscribe to the [Roots Blog](https://roots.io/blog/)
+* Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
+* Listen to the [Roots Radio podcast](https://roots.io/podcast/)

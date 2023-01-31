@@ -1,0 +1,7 @@
+.contact-us-component {
+  background-color: $medium-grey-color;
+
+  @include media-breakpoint-up(lg) {
+    background: linear-gradient(90deg, #fff 48%, $medium-grey-color 48%);
+  }
+}

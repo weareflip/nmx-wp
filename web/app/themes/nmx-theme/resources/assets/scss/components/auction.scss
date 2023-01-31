@@ -1,0 +1,140 @@
+.auction-component {
+  background-color: $dark-grey-color;
+  color: #fff;
+  font-family: $alternate-font;
+  margin: 0 auto;
+  max-width: $component-max-width;
+  padding: $component-padding;
+
+  .icon {
+    color: $primary-color;
+    line-height: 1.4em;
+  }
+
+  .title {
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &-large {
+      @include anti-alias;
+      font-weight: 700;
+      font-size: 1.2em;
+    }
+  }
+
+  .image {
+    margin-bottom: 1em;
+  }
+
+  .details-time {
+    @include anti-alias;
+
+    display: flex;
+    align-items: center;
+    line-height: 1em;
+    margin-bottom: 1em;
+
+    .icon {
+      font-size: 2em;
+      margin-right: 4px;
+    }
+
+    .details-timer {
+      font-size: 1.1em;
+      font-weight: 600;
+      line-height: 1.5em;
+      margin-right: 1em;
+      text-transform: uppercase;
+      @include media-breakpoint-up(lg) {
+        font-size: 1.4em;
+      }
+    }
+
+    .details-date {
+      font-size: .9rem;
+
+      @include media-breakpoint-up(md) {
+        font-size: 1.2em;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: .8em;
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: 1em;
+    }
+  }
+
+  .details-text {
+    @include anti-alias;
+  }
+
+  .details-meta {
+    @include anti-alias;
+    font-weight: 600;
+
+    span {
+      display: inline-block;
+      line-height: 1.6em;
+    }
+
+    span:not(:last-of-type) {
+      border-right: 2px solid #fff;
+      line-height: 1.7em;
+      margin-right: .8em;
+      padding-right: .7em;
+    }
+
+    .icon {
+      position: relative;
+      top: .1em;
+    }
+  }
+
+  .title {
+    //@include anti-alias;
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: .5em;
+    text-transform: uppercase;
+  }
+
+  .details-title {
+    font-size: 1.7em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  @media screen and (min-width: 992px) and (max-width: 1320px) {
+    .button {
+      width: 100%;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    background: none;
+    font-size: 1.1em;
+
+    .details-text,
+    .title {
+      max-width: 590px;
+    }
+
+    .details-title {
+      font-size: 2em;
+    }
+
+    .title {
+      color: #000;
+    }
+
+    .details-wrapper {
+      background-color: $dark-grey-color;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+      padding: 4em 6em;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.locations-component svg {
+  max-width: 100%;
+}
+
+.location-list {
+  background-color: #fff;
+  border: 1px solid $medium-grey-color;
+  border-radius: 8px;
+  font-weight: bold;
+  list-style: none;
+  max-width: 360px;
+  padding: 0;
+  text-align: left;
+
+  li {
+    padding: 1em;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $medium-grey-color;
+    }
+  }
+}
+
+.location-circle {
+  background-color: $primary-color;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  font-weight: 300;
+  line-height: 1.1em;
+  padding: 4px;
+  text-align: center;
+  width: 1.5em;
+}
+
+.locations-map {
+  svg {
+    max-height: 100%;
+  }
+}

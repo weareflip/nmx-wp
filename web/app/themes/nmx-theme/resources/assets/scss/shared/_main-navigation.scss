@@ -1,0 +1,115 @@
+.navbar {
+  $nav-animation-time: 200ms;
+
+  background-color: $menu-background-dark;
+  font-family: $alternate-font;
+  font-size: 1.2em;
+  z-index: 1009;
+
+  .navbar-logo {
+    height: 1.3em;
+    width: 1.3em;
+  }
+
+  .menu-icon svg {
+    height: 1.3em;
+    width: 1.3em;
+  }
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.4em;
+  }
+
+  &,
+  a {
+    color: $menu-color-dark;
+    font-weight: 600;
+  }
+
+  .navbar-logo {
+    @include anti-alias;
+    font-weight: 600;
+    height: 64px;
+    width: 61px;
+  }
+
+  .nav-link {
+    display: inline-block;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &.active {
+      border-bottom: 4px solid $primary-color;
+    }
+  }
+
+  .navbar-toggler {
+    color: #fff;
+    right: 20px;
+    position: absolute;
+    top: 24px;
+
+    .icon {
+      display: inline-block;
+    }
+  }
+
+  .nav-item {
+    display: inline-block;
+  }
+
+  .navbar-collapse {
+    position: relative;
+  }
+
+  .navbar-footer {
+    bottom: 0;
+    font-size: 2em;
+    position: absolute;
+  }
+
+  // Animation
+  .navbar-collapse {
+    height: 0;
+    padding-top: 0;
+
+    @include media-breakpoint-down(md) {
+      &.show {
+        display: block;
+        height: 487px;
+        max-height: 68vh;
+        transition: all $nav-animation-time ease-in;
+      }
+    }
+  }
+
+  &.nav-open {
+    .navbar-logo {
+      height: 147px !important;
+      width: 138px !important;
+
+      transition: height 25ms ease-in-out, width 25ms ease-in-out;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: .9em;
+
+    .nav-item:not(:last-child) {
+      margin-right: 12px;
+    }
+
+    .nav-link {
+      padding: .25em;
+    }
+
+    .navbar-logo {
+      height: 73px;
+      width: 69px;
+    }
+
+    .navbar-collapse {
+      height: auto;
+    }
+  }
+}

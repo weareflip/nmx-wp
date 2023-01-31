@@ -1,0 +1,233 @@
+#header-carousel {
+  $header-height: 631px;
+  $shape-mobile-height: 45%;
+  $shape-desktop-width: 65vw;
+
+  $header-font-size-breakpoints: (
+    '360px': '4.8vw',
+    '440px': '4.5vw',
+    '630px': '4.15vw',
+    '850px': '4vw',
+    '950px': '3.5vw',
+    '990px': '1.4vw',
+    '1580px': '1.36rem'
+  );
+
+  color: #fff;
+  height: $header-height;
+  position: relative;
+
+  .carousel {
+    &-inner {
+      position: absolute;
+      height: $header-height;
+      top: 0;
+    }
+
+    &-item {
+      height: 100%;
+      position: absolute;
+
+      &.active {
+        z-index: 4;
+      }
+
+      .wrapper {
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    &-mobile-controls {
+      position: absolute;
+      bottom: 230px;
+      left: 40px;
+      width: 26vw;
+      z-index: 1002;
+    }
+
+    &-controls {
+      position: absolute;
+      bottom: 55px;
+      left: 20px;
+      width: 26vw;
+      z-index: 1002;
+    }
+
+    &-control-prev,
+    &-control-next {
+      display: block;
+      color: #fff;
+      font-size: 1.3em;
+      opacity: 1;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    &-indicators {
+      display: block;
+      margin: 0;
+      position: static;
+
+      li {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .item {
+    &-text {
+      color: #fff;
+      font-family: $alternate-font;
+      font-size: 3.4vw;
+      font-weight: 300;
+      left: 0;
+      min-height: 165px;
+      padding: 0 1.5em;
+      position: absolute;
+      top: 420px;
+      right: 0;
+      z-index: 1001;
+
+      .button {
+        font-size: 1rem;
+      }
+
+      p {
+        @include anti-alias;
+        font-weight: 300;
+      }
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 1.3em;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-weight: 600;
+    }
+  }
+
+  .background {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    left: -1px;
+    width: 100%;
+    z-index: -1;
+
+    svg {
+      bottom: 0;
+      height: $shape-mobile-height;
+      left: 0;
+      position: absolute;
+      width: 200%;
+      z-index: -2;
+
+      @include media-breakpoint-up(lg) {
+        height: $shape-desktop-width;
+        left: auto;
+        transform: rotate(90deg) translateX(-100%);
+        transform-origin: bottom left;
+        width: 720px;
+        z-index: -2;
+      }
+    }
+
+    .image {
+      background-size: cover;
+      background-position: center center;
+      height: 70%;
+      position: absolute;
+      width: 100%;
+      top: 90px;
+
+      z-index: -3;
+
+      @include media-breakpoint-up(lg) {
+        height: 100%;
+        top: 0;
+        right: 0;
+        width: 80%;
+      }
+    }
+  }
+
+  .carousel-logo {
+    left: 60px;
+    position: absolute;
+    top: 50px;
+    width: 154px;
+    z-index: 1002;
+  }
+
+  @each $breakpoint, $font-size in $header-font-size-breakpoints {
+    @media screen and (min-width: $breakpoint) {
+      .item-header {
+        font-size: unquote($font-size);
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .item {
+      &-text {
+        max-width: $shape-desktop-width - 17vw;
+        bottom: 75px;
+        min-height: 330px;
+        top: auto;
+      }
+
+      &-header {
+        p {
+          @include anti-alias;
+          font-size: 1.15em;
+        }
+      }
+
+      &-title {
+        font-weight: 600;
+        font-size: 2.8em;
+        line-height: 1.1em;
+      }
+    }
+
+    .navbar {
+      background-color: #fff;
+      color: #000;
+      font-family: $alternate-font;
+      height: 57px;
+      padding: .7em 2.6em 1em 1.6em;
+      position: absolute;
+      right: 0;
+      top: 25px;
+
+      .navbar-logo {
+        display: none;
+      }
+
+      &:before {
+        content: '';
+        border-style: solid;
+        border-width: 0 0 57px 42px;
+        border-color: transparent transparent #fff transparent;
+        left: -42px;
+        position: absolute;
+        top: 0;
+      }
+
+      .wrapper {
+        background-color: #fff;
+        height: 100%;
+        width: 100%;
+      }
+
+      .nav-link {
+        color: #000 !important;
+      }
+    }
+  }
+}

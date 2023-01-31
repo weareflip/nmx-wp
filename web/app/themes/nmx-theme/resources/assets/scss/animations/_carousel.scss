@@ -1,0 +1,62 @@
+#header-carousel {
+  .carousel-item {
+    display: block;
+    top: 0;
+
+    @include media-breakpoint-down(lg) {
+      opacity: 1;
+
+      transition: opacity ease-in-out 400ms;
+
+      &.non-active {
+        opacity: 0;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      &.active {
+        opacity: 1;
+        transition: opacity linear 0ms;
+        transition-delay: 800ms;
+
+        //.background svg {
+        //  transition: left ease-in 600ms;
+        //  left: 0;
+        //  transition-delay: 200ms;
+        //}
+
+        .background .image {
+          opacity: 1;
+          transition: opacity ease-in 200ms;
+        }
+
+        .item-text {
+          left: 0;
+          transition: left ease-in 600ms;
+          transition-delay: 200ms;
+        }
+      }
+
+      &.non-active {
+        opacity: 0;
+        transition: opacity linear 0ms;
+        transition-delay: 800ms;
+
+        //.background svg {
+        //  transition: left ease-out 600ms;
+        //  left: -5%;
+        //}
+
+        .background .image {
+          opacity: 0;
+          transition: opacity ease-in 400ms;
+        }
+
+        .item-text {
+          left: -80%;
+          transition: left ease-out 400ms;
+        }
+      }
+    }
+  }
+}
