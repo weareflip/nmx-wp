@@ -356,11 +356,39 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "5eec34a453c7f": {
+                    "key": "5eec34a453c7f",
+                    "name": "buy-categories",
+                    "label": "Buy categories component",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Component",
             "min": "",
             "max": ""
+        },
+        {
+            "key": "field_5eec353c43d9e",
+            "label": "Buy categories Section",
+            "name": "buy_categories_section",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": "",
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         }
     ],
     "location": [
@@ -378,7 +406,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": 1,
     "description": "",
-    "modified": 1675157804
+    "modified": 1592538461
 }

@@ -1,28 +1,35 @@
+
 <div class="container py-8">
     <h1 class="section-title d-inline-block red-border-left text-left">
         {{ isset($title) ? $title : 'Buy Equipment' }}
     </h1>
 
     <div class="row">
-        @forelse($categories as $category)
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="category-card category-card--dark" data-href="{{ route('buy.category', $category->name) ?? '#' }}">
-                    <div class="category-card__image">
-                        <img src="{{ $category->featuredImage() ? $category->featuredImage() : '/media/images/image-unavailable.png' }}" />
-                    </div>
+        @if ($buy_categories)
+            @foreach ($buy_categories as $category)
+                @php
+                $featured_img_url = get_the_post_thumbnail_url($category->ID, 'full');
+                @endphp
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="category-card category-card--dark" data-href="{{get_the_permalink($category->ID) }}}}">
+                        <div class="category-card__image">
+                            <img
+                                src="{{ $featured_img_url ? $featured_img_url : '/media/images/image-unavailable.png' }}" />
+                        </div>
 
-                    <div class="category-card__text">
-                        {{ $category->title }}
+                        <div class="category-card__text">
+                            {{ $category->post_title }}
 
-                        <a href="{{ route('buy.category', $category->name) }}" class="button">
-                            See more
-                            @include('shared.svg.arrow-right')
-                        </a>
+                            <a href="{{ get_the_permalink($category->ID) }}" class="button">
+                                See more
+                                @include('shared.svg.arrow-right')
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        @empty
+            @endforeach
+        @else
             <p>No purchasing categories available, please check back soon, or contact us below.</p>
-        @endforelse
+        @endif
     </div>
 </div>

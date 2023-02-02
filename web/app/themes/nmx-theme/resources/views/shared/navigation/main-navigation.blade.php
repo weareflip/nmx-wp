@@ -22,7 +22,7 @@
                     @foreach($main_menu_items as $menu_item)
                         <li class="nav-item">
                             <a class="nav-link{{ $menu_item->current ? ' active' : '' }} p-0 pt-2 mx-2 font-weight-bolder"
-                               href="{{ $menu_item->url }}" target="_blank">
+                               href="{{ $menu_item->url }}" target="{{ $menu_item->target }}">
                                 {{ $menu_item->title }}
                             </a>
                         </li>

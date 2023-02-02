@@ -9,13 +9,13 @@
                 <div class="row mt-5 mb-4">
                     <div class="col-5">
                         <ul class="list-unstyled text-uppercase">
-                            {{-- @foreach($main_menu_items as $menu_item)
+                            @foreach($main_menu_items as $menu_item)
                                 <li class="mb-2">
                                     <a href="{{ $menu_item->url }}" class="text-black font-weight-bold">
                                         {{ $menu_item->title }}
                                     </a>
                                 </li>
-                            @endforeach --}}
+                            @endforeach
                         </ul>
                     </div>
 
