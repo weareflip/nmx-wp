@@ -14,7 +14,7 @@ add_action('wp_enqueue_scripts', function () {
     // Localises the registered script with data for javascript variables
     wp_localize_script(
         'main',
-        'follow',
+        'nmx_ajax',
         [
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('ajax-nonce'),

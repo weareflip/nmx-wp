@@ -11,7 +11,7 @@ class EquipmentSearch {
     if (this.searchElement.length === 0 || this.resultsElement.length === 0) return;
 
     let throttleTimer = null;
-
+    
     for (let element of this.searchElement) {
       element.addEventListener('keyup', event => {
         if (throttleTimer) clearTimeout(throttleTimer);
