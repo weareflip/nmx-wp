@@ -16,7 +16,7 @@ add_action('admin_menu', function(){
 		$remove[] = 'Custom Fields';
 		$remove[] = 'Settings';
 	}
-	// AdminMenu::remove($remove);
+	AdminMenu::remove($remove);
 	AdminMenu::removeSubPages([
 		['Dashboard', 'Updates'],
 	]);

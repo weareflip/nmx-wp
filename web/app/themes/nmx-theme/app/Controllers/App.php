@@ -23,7 +23,12 @@ class App extends Controller
             return __('Latest Posts', 'follow');
         }
         if (is_archive()) {
-            return get_the_archive_title();
+            if(get_post_type() == 'category'){
+                return 'Buy';
+            } else {
+                return get_the_archive_title();
+            }
+            
         }
         if (is_search()) {
             return sprintf(__('Search Results for %s', 'follow'), get_search_query());
