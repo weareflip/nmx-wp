@@ -25,7 +25,7 @@ $(function () {
     initCarousel('#auction-carousel');
     initVideoPlayer();
     initFauxFormMessages();
-    initEquipmentSearch();
+    // initEquipmentSearch();
     initScrollToHash()
     initPardotIframeHandling();
 

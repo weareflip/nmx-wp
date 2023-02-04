@@ -18,7 +18,7 @@
                         @if ($equipment->gallery)
                             <img src="{{ $equipment->gallery[0]['image']['sizes']['large'] }}" class="w-100" alt="Image of {{ $equipment->title }}" id="equipment-main-image">
                         @else
-                            <img src="/media/images/image-unavailable.png" alt="Equipment image unavailable">
+                            <img src="<?= get_template_directory_uri() ?>/assets/media/images/image-unavailable.png" alt="Equipment image unavailable">
                         @endif
                     </div>
 

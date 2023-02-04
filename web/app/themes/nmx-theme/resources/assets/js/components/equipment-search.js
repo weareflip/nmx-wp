@@ -56,3 +56,4 @@ class EquipmentSearch {
 export const initEquipmentSearch = (query) => {
   new EquipmentSearch(query);
 };
+

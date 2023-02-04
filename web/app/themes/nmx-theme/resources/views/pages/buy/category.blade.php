@@ -20,7 +20,7 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="category-card category-card--big" data-href="{{ route('buy.equipment', [$category->post_name, $equipment->post_name]) ?? '' }}">
                         <div class="category-card__image">
-                            <img src="{{ $equipment->pivot->equipment_thumbnail ?? '/media/images/images-unavailable.png' }}" />
+                            <img src="{{ $equipment->pivot->equipment_thumbnail ?? '<?= get_template_directory_uri() ?>/assets/media/images/images-unavailable.png' }}" />
                         </div>
 
                         <div class="category-card__text flex-column">

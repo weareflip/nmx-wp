@@ -12,6 +12,7 @@
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Type a phrase or keyword to begin searching"
                     id="equipment-search" />
+                    <input type="hidden" class="form-control" id="id-category" value="{{get_the_ID()}}"/>
             </div>
         </div>
 

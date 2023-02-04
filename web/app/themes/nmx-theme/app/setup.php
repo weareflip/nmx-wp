@@ -11,16 +11,19 @@ use Roots\Sage\Template\BladeProvider;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_script('search', get_template_directory_uri().'/assets/js/components/search.js', ['jquery'], null, true);
+
     // Localises the registered script with data for javascript variables
     wp_localize_script(
-        'main',
-        'nmx_ajax',
+        'search',
+        'nmx',
         [
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('ajax-nonce'),
         ]
     );
-}, 100);;
+}, 100);
+
 
 
 /**
